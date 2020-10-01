@@ -22,7 +22,7 @@ public class PolicyController {
 		return "Greetings from Spring Boot Application 1.0";
 	}
 	
-	@RequestMapping(value="/create", method = RequestMethod.POST)
+	@RequestMapping(value="/policy", method = RequestMethod.POST)
 	public Policy createPolicy(@RequestBody Policy policy) {
 		return policyService.createPolicy(policy);
 		
