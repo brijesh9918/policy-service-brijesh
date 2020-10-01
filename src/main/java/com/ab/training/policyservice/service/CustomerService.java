@@ -16,18 +16,5 @@ public class CustomerService {
 		Customer customer = response.getBody();
 		return customer;
 	}
-	
-	public Customer getCustomerDetailsAsObject(String customerId) {
-		RestTemplate restTemplate = new RestTemplate();
-		Customer customer = restTemplate.getForObject("http://localhost:8081/mongoCustomer/"+customerId, Customer.class);
-		return customer;
-	}
-	
-	public Customer getCustomerDetailsAsExchange(String customerId) {
-		RestTemplate restTemplate = new RestTemplate();
-		ResponseEntity<Customer> response = restTemplate.exchange("http://localhost:8081/mongoCustomer/"+customerId, HttpMethod.GET, null, Customer.class);
-		Customer customer = response.getBody();
-		return customer;
-	}
 
 }
